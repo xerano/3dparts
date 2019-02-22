@@ -13,10 +13,15 @@ module profile_holder(){
         union(){
          
           cube([20, 60, 20]);
-          translate([47, 29.5, 15]) {
-            translate([0, 0, 5]) cylinder(d=8, h=5, $fn=64);
-            cylinder(d=14.8, h=5, $fn=6);
-          }
+            hull(){
+                translate([45, 29.5, 20]) cylinder(d=8.1, h=5, $fn=64);
+                translate([49, 29.5, 20]) cylinder(d=8.1, h=5, $fn=64);
+            }
+            hull(){
+                translate([45, 29.5, 15]) cylinder(d=14.8, h=5, $fn=6);
+                translate([49, 29.5, 15]) cylinder(d=14.8, h=5, $fn=6);
+            }
+          
           translate([10,7.5,20]) rotate([0,0,-90]) hole();
           translate([20,6,10]) rotate([90,90,90]) cylinder(d=5, h=5, $fn=64);
           translate([10,52.5,20]) rotate([0,0,90]) hole();
@@ -37,4 +42,3 @@ module hole(){
 //nut_holda();
 profile_holder();
 //hole();
-
